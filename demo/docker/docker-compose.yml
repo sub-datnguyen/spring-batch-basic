@@ -1,0 +1,13 @@
+version: '3.8'  # Phiên bản Docker Compose
+
+services:
+  db:  # Tên service
+    image: mysql:8  # Sử dụng image MySQL 8
+    restart: always  # Tự động khởi động lại nếu container bị dừng
+    environment:  # Các biến môi trường
+      MYSQL_ROOT_PASSWORD: root
+      MYSQL_DATABASE: dbtest
+      MYSQL_USER: user
+      MYSQL_PASSWORD: 123456
+    ports:  # Ánh xạ cổng
+      - "3906:3306"  # Ánh xạ cổng 3306 của container đến cổng 3306 của máy chủ
